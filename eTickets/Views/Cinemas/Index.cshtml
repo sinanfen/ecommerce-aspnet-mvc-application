@@ -8,34 +8,40 @@
 }
 
 @*Write Code*@
-
-<div class="row">
-    <div class="col-md-8 offset-md-2">
-        <table class="table">
-            <thead>
-                <tr class="text-center">
-                    <th>@Html.DisplayNameFor(model=>model.Logo)</th>
-                    <th>@Html.DisplayNameFor(model=>model.Name)</th>
-                    <th>@Html.DisplayNameFor(model=>model.Description)</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr class="text-center">
-                        <td class="align-middle">
-                            <img class="rounded-circle" src="@item.Logo" alt="@item.Name" style="max-width:150px;" />
-                        </td>
-                        <td class="align-middle">@item.Name</td>
-                        <td class="align-middle">@item.Description</td>
-                        <th class="align-middle">
-                            <a class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i> Edit</a>
-                            <a class="btn btn-danger text-white"><i class="bi bi-trash"></i> Delete</a>
-                        </th>
-                    </tr>
-                }
-            </tbody>
-        </table>
+<div class="card mt-1 mb-1">
+    <div class="card-header">
+        <h4 class="text-center"><span class="fas fa-edit"></span> Cinema List</h4>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <table class="table">
+                    <thead>
+                        <tr class="text-center">
+                            <th>@Html.DisplayNameFor(model=>model.Logo)</th>
+                            <th>@Html.DisplayNameFor(model=>model.Name)</th>
+                            <th>@Html.DisplayNameFor(model=>model.Description)</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr class="text-center">
+                                <td class="align-middle">
+                                    <img class="rounded-circle" src="@item.Logo" alt="@item.Name" style="max-width:150px;" />
+                                </td>
+                                <td class="align-middle">@item.Name</td>
+                                <td class="align-middle">@item.Description</td>
+                                <th class="align-middle">
+                                    <a class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i> Edit</a>
+                                    <a class="btn btn-danger text-white"><i class="bi bi-trash"></i> Delete</a>
+                                </th>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
