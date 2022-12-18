@@ -1,5 +1,6 @@
 ﻿using eTickets.Data;
-using eTickets.Data.Services;
+using eTickets.Data.Services.Abstract;
+using eTickets.Data.Services.Concrete;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -36,6 +37,8 @@ namespace eTickets
 
             //Services configuration
             services.AddScoped<IActorsService, ActorsService>();
+            services.AddScoped<IProducerService, ProducerService>();
+            services.AddScoped<ICinemaService, CinemaService>();
             //services.AddScoped<IProducersService, ProducersService>();
             //services.AddScoped<ICinemasService, CinemasService>();
             //services.AddScoped<IMoviesService, MoviesService>();

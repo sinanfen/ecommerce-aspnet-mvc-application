@@ -34,9 +34,9 @@
                                 <td class="align-middle">@item.FullName</td>
                                 <td class="align-middle">@item.Bio</td>
                                 <th class="align-middle">
-                                    <a class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i> Edit</a>
-                                    <a class="btn btn-outline-warning"><i class="bi bi-eye"></i> Details</a>
-                                    <a class="btn btn-danger text-white"><i class="bi bi-trash"></i> Delete</a>
+                                    <a class="btn btn-outline-primary" asp-controller="Producers" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i> Edit</a>
+                                    <a class="btn btn-outline-warning" asp-controller="Producers" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye"></i> Details</a>
+                                    <a class="btn btn-danger text-white" asp-controller="Producers" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i> Delete</a>
                                 </th>
                             </tr>
                         }
@@ -45,4 +45,7 @@
             </div>
         </div>
     </div>
+</div>
+<div style="position:fixed;right:25px;bottom:25px;" class="text-white">
+    <a asp-controller="Producers" asp-action="Create" class="btn btn-success"><i class="bi bi-plus-circle"></i> Add New</a>
 </div>
