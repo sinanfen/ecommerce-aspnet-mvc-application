@@ -45,6 +45,7 @@ namespace eTickets.Models
         //Relationships
         [Display(Name = "Select actor(s)")]
         [Required(ErrorMessage = "Movie actor(s) is required")]
+        //List because many to many - a movie can have a few actors!
         public List<int> ActorIds { get; set; }
 
         [Display(Name = "Select a cinema")]
