@@ -76,12 +76,12 @@ namespace eTickets.Controllers
             return View(actorDetails);
         }
 
-        [HttpPost,ActionName("Delete")]
+        [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var actorDetails = await _actorsService.GetByIdAsync(id);
             if (actorDetails == null) return View("NotFound");
-         
+
             await _actorsService.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }

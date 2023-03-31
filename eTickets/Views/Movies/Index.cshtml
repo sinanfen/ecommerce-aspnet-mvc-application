@@ -77,4 +77,5 @@
         </div>
     </div>
 </div>
-@*@await Html.PartialAsync("_CreateItem", "Movies") *@
+@* Movies --> because, --@Model string-- in _CreateItem partialview. Getting (MoviesController)*@
+@await Html.PartialAsync("_CreateItem", "Movies") 
