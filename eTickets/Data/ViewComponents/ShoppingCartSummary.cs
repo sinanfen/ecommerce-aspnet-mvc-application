@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace eTickets.Data.ViewComponents
 {
-    public class ShoppingCartSummaryViewComponent : ViewComponent
+    public class ShoppingCartSummary : ViewComponent
     {
         private readonly ShoppingCart _shoppingCart;
 
-        public ShoppingCartSummaryViewComponent(ShoppingCart shoppingCart)
+        public ShoppingCartSummary(ShoppingCart shoppingCart)
         {
             _shoppingCart = shoppingCart;
         }
