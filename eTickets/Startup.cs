@@ -1,4 +1,5 @@
 ﻿using eTickets.Data;
+using eTickets.Data.Cart;
 using eTickets.Data.Services;
 using eTickets.Data.Services.Abstract;
 using eTickets.Data.Services.Concrete;
@@ -27,19 +28,17 @@ namespace eTickets
             //Services configuration
             services.AddScoped<IActorsService, ActorsService>();
             services.AddScoped<IProducerService, ProducerService>();
-            services.AddScoped<ICinemaService, CinemaService>();
-            //services.AddScoped<IProducersService, ProducersService>();
-            //services.AddScoped<ICinemasService, CinemasService>();
+            services.AddScoped<ICinemaService, CinemaService>();           
             services.AddScoped<IMoviesService, MoviesService>();
             //services.AddScoped<IOrdersService, OrdersService>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            //services.AddScoped(sc => ShoppingCart.GetShoppingCart(sc));
+            services.AddScoped(sc => ShoppingCart.GetShoppingCart(sc));
 
             //Authentication and authorization
             //services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
             //services.AddMemoryCache();
-            //services.AddSession();
+            services.AddSession();
             //services.AddAuthentication(options =>
             //{
             //    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -64,7 +63,7 @@ namespace eTickets
             app.UseStaticFiles();
 
             app.UseRouting();
-            //app.UseSession();
+            app.UseSession();
 
             //Authentication & Authorization
             //app.UseAuthentication();
