@@ -16,7 +16,7 @@ namespace eTickets.Controllers
             _shoppingCart = shoppingCart;
         }
 
-        public IActionResult Index()
+        public IActionResult ShoppingCart()
         {
             var items = _shoppingCart.GetShoppingCartItems();
             _shoppingCart.ShoppingCartItems = items;
@@ -26,6 +26,28 @@ namespace eTickets.Controllers
                 ShoppingCartTotal = _shoppingCart.GetShoppingCartTotal()
             };
             return View(response);
+        }
+
+        public async Task<IActionResult> AddItemToShoppingCart(int id)
+        {
+            var item = await _moviesService.GetMovieByIdAsync(id);
+            if (item!=null)
+            {
+                _shoppingCart.AddItemToCart(item);
+            }
+            return RedirectToAction(nameof(ShoppingCart));
+
+        }
+
+        public async Task<IActionResult> RemoveItemFromShoppingCart(int id)
+        {
+            var item = await _moviesService.GetMovieByIdAsync(id);
+            if (item != null)
+            {
+                _shoppingCart.RemoveItemFromCart(item);
+            }
+            return RedirectToAction(nameof(ShoppingCart));
+
         }
     }
 }
